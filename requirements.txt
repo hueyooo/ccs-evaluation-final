@@ -1,0 +1,8 @@
+django
+django-crispy-forms
+crispy-bootstrap5
+mysqlclient
+Pillow
+openpyxl
+pandas
+vaderSentiment
