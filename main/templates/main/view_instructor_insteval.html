@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %} 
+{% block title %}Evaluation{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/view_responses_eval.css' %}{% endblock %} 
+{% block content %}
+  <ul>
+    <div class="title">Instructors' Charts/Instructors' Evaluation</div>
+    {% for inst in instructor %}
+      {% if inst.access_lvl != 3 %}
+      <a
+        href="{% url 'view_instructor_chart_id_instructor' id=inst.user.id %}"
+      >
+        <li>
+        <img src="{{ inst.user.image.url }}" />
+        <h3>{{ inst }}</h3>
+        {% if inst.department == 'IT' %}
+        <p>Information Technology</p>
+        {% else %}
+          <p>Computer Science/Information Systems/Associate in Computer Technology</p>
+        {% endif %}
+        </li>
+      </a>
+      {% endif %}
+    {% endfor %}
+    <a href="/evaluation/view/instructor-chart">
+      <div class="func-button back">
+        Go back 
+      </div>
+    </a>
+  </ul>
+{% endblock %}

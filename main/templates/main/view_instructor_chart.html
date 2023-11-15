@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %} 
+{% block title %}View Instructors' Charts{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/instructor_chart.css' %}{% endblock %}
+{% block content %}
+  <div class="title-header">
+    <p>Instructors' Charts</p>
+  </div>
+  <div class="functions">
+    <div class="buttons">
+      <a href="{% url 'view_instructor_chart_student' %}">
+        <div class="student">
+          Students' Evaluation
+        </div>
+      </a>
+      <a href="{% url 'view_instructor_chart_instructor' %}">
+        <div class="instructor">
+          Instructors' Evaluation
+        </div>
+      </a>
+    </div>
+    <a class="back-button" href="/evaluation/view">Back</a>
+  </div>
+{% endblock %}

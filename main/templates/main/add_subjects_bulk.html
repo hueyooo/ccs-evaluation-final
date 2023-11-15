@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% block title %}Bulk Add{% endblock %}
+{% load static %}
+{% block style %}{% static 'css/bulkreg.css' %}{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="container-box">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h1>Add Subjects</h1>
+      {% if messages %}
+        <ul class="errorlist nonfield">
+          {% for message in messages %}
+          <li {% if message.tags %} class="{{message.tags}}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {{form}}
+      <div class="buttons">
+        <button type="submit" class="btn btn-success">Add</button>
+        <a class="back-button" href="/evaluation/view-subjects/add">Back</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}

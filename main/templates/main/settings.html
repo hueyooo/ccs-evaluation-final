@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %} 
+{% block title %}Evaluation{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/settings.css' %}{% endblock %} 
+{% block content %}
+    <div class="functions">
+      {% if check == 0 %}
+      <a href="/settings/evaluation_sched">
+        <div class="func-button">
+          <div class="icon">
+            <div class="set_eval-icon">
+              <img src="{% static 'images/icons/set_eval.png' %}" alt="set_eval">
+            </div>
+            <div class="text1">
+              Set Evaluation Period
+            </div>
+          </div>
+        </div>
+      </a>
+      {% else %}
+      <a href="/settings/evaluation_sched">
+        <div class="func-button">
+          <div class="icon">
+            <div class="set_eval-icon">
+              <img src="{% static 'images/icons/set_eval.png' %}" alt="set_eval">
+            </div>
+            <div class="text1">
+              Edit Evaluation Period
+            </div>
+          </div>
+        </div>
+      </a>
+      {% endif %}
+      <a href="/sign-up">
+        <div class="func-button">
+          <div class="icon">
+            <div class="reg_user-icon">
+              <img src="{% static 'images/icons/reg_user.png' %}" alt="reg_user">
+            </div>
+            <div class="text">
+              Register Users
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+{% endblock %}

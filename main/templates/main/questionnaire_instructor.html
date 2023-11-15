@@ -1,0 +1,144 @@
+{% extends "main/base.html" %} 
+{% block title %}Evaluation{% endblock %} 
+{% load static %}
+{% block style %}{% static 'css/questionnaire.css' %}{% endblock %}
+{% block content %}
+  <form method="post">
+    <ul>
+      {% for message in messages %}
+        <li> {{message}}</li>
+      {% endfor %}
+    </ul>
+    {% csrf_token %}
+    <center>
+      <table>
+        <tr>
+          <th>Personal Qualities</th>
+          <th>5</th>
+          <th>4</th>
+          <th>3</th>
+          <th>2</th>
+          <th>1</th>
+        </tr>
+        {% for question in questions %}
+        {% if question.category == 'personal qualities' %}
+        <tr>
+          <td>{{ question.question }}</td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=5 required/>
+            </label>
+          </td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=4 required/>
+            </label>
+          </td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=3 required/>
+            </label>
+          </td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=2 required/>
+            </label>
+          </td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=1 required/>
+            </label>
+          </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        <tr>
+          <th>Interpersonal Relationship</th>
+          <th>5</th>
+          <th>4</th>
+          <th>3</th>
+          <th>2</th>
+          <th>1</th>
+        </tr>
+        {% for question in questions %}
+        {% if question.category == 'interpersonal relationship' %}
+        <tr>
+          <td>{{ question.question }}</td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=5 required/>
+            </label>
+          </td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=4 required/>
+            </label>
+          </td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=3 required/>
+            </label>
+          </td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=2 required/>
+            </label>
+          </td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=1 required/>
+            </label>
+          </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        <tr>
+          <th>Ethical Behavior</th>
+          <th>5</th>
+          <th>4</th>
+          <th>3</th>
+          <th>2</th>
+          <th>1</th>
+        </tr>
+        {% for question in questions %}
+        {% if question.category == 'ethical behavior' %}
+        <tr>
+          <td>{{ question.question }}</td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=5 required/>
+            </label>
+          </td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=4 required/>
+            </label>
+          </td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=3 required/>
+            </label>
+          </td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=2 required/>
+            </label>
+          </td>
+          <td>
+            <label class="radio-label">
+              <input type="radio" name="{{ question.id }}" class="radio-input" value=1 required/>
+            </label>
+          </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+      </table>
+      <div class="comment-container">
+        <h2>Comments</h2>
+        <textarea class="comment" name="comment" type="text" minlength="0" rows="5"></textarea>
+        <button type="submit" class="submit-button">Submit</button>
+        <a class="back-button" href="/evaluation">Back</a>
+      </div>
+    </center>
+  </form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "main/base.html" %} 
+{% block title %}Add Questionnaire{% endblock %} 
+{% load static %}
+{% block style %}{% static 'css/update_add_questionnaire.css' %}{% endblock %}
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="id_category" class="form-label requiredField">
+        Category
+        <span class="asteriskField">*</span>
+      </label>
+      <input 
+        type="text" 
+        name="category" 
+        value="{{ category }}"
+        class="textinput form-control" 
+        required="" 
+        disabled="" 
+        id="id_category"
+      >
+    </div>
+    <div class="mb-3">
+      <label for="id_question" class="form-label requiredField">
+        Question
+        <span class="asteriskField">*</span> 
+      </label>
+      <textarea name="question" cols="40" rows="5" class="textarea form-control" required="" id="id_question"></textarea>
+    </div>
+    <a class="back-button" href="/evaluation/edit_instructors_questionnaire">Back</a>
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+{% endblock %}

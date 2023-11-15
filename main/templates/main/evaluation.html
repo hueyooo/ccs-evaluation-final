@@ -1,0 +1,51 @@
+{% extends 'main/base.html' %} 
+{% block title %}Evaluation{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/evaluation.css' %}{% endblock %} 
+{% block content %}
+  {% if check == 0 %}
+  <p>Evaluation is not open right now</p>
+  {% else %}
+  <ul>
+    {% for eval in evaluate %}
+      {% if user.role == 'Student' %}
+        <a
+          href="{% url 'questionnaire' evaluated=eval.inst.user.id %}"
+        >
+          <li>
+            <img src="{{ eval.inst.user.image.url }}" />
+            <h3>{{ eval.inst }}</h3>
+            <p>{{ eval.subj }}</p>
+
+            {% for check in completed %} 
+              {% if check.evaluated == eval.inst and check.author == user %}
+                <span class="success">Completed</span>
+              {% endif %} 
+            {% endfor %}
+          </li>
+        </a>
+      {% elif user.role == 'Instructor' and user.instructor.access_lvl != 3 %}
+        <a
+          href="{% url 'questionnaire' evaluated=eval.user.id %}"
+        >
+          <li>
+            <img src="{{ eval.user.image.url }}" />
+            <h3>{{ eval.user }}</h3>
+            {% if eval.department == 'IT' %}
+            <p>Information Technology</p>
+            {% else %}
+            <p>Computer Science/Information System/Associate in Computer Technology</p>
+            {% endif %}
+
+            {% for check in completed %} 
+              {% if check.evaluated == eval.user and check.author == user %}
+                <span class="success">Completed</span>
+              {% endif %} 
+            {% endfor %}
+          </li>
+        </a>
+      {% endif %} 
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endblock %}

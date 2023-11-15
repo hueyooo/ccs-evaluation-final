@@ -1,0 +1,119 @@
+{% extends 'main/base.html' %} 
+{% block title %}Evaluation{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/view_instructor_chart.css' %}{% endblock %} 
+{% block content %}
+  <div class="container">
+    <div class="title">Instructors' Charts/Students' Evaluation/{{ instructor.user.id }}</div>
+    <hr size="2px" width="100%" color="gray"/>
+    <div class="instructor">{{ instructor }}</div>
+    <table>
+      <tr>
+        <th>Course Planning/Preparation</th>
+        <th>Average</th>
+      </tr>
+      {% for ave in average %}
+        {% if ave.category == 'course planning' %}
+        <tr>
+          <td>{{ ave.question }}</td>
+          <td class="score">{{ ave.average }}</td>
+        </tr>
+        {% endif %}
+      {% endfor %}
+      <tr>
+        <th>Instructional Delivery</th>
+        <th>Average</th>
+      </tr>
+      {% for ave in average %}
+        {% if ave.category == 'instructional delivery' %}
+        <tr>
+          <td>{{ ave.question }}</td>
+          <td class="score">{{ ave.average }}</td>
+        </tr>
+        {% endif %}
+      {% endfor %}
+      <tr>
+        <th>Assessment of Student Learning</th>
+        <th>Average</th>
+      </tr>
+      {% for ave in average %}
+        {% if ave.category == 'assessment of student learning' %}
+        <tr>
+          <td>{{ ave.question }}</td>
+          <td class="score">{{ ave.average }}</td>
+        </tr>
+        {% endif %}
+      {% endfor %}
+      <tr>
+        <th>Classroom Management</th>
+        <th>Average</th>
+      </tr>
+      {% for ave in average %}
+        {% if ave.category == 'classroom management' %}
+        <tr>
+          <td>{{ ave.question }}</td>
+          <td class="score">{{ ave.average }}</td>
+        </tr>
+        {% endif %}
+      {% endfor %}
+      <tr>
+        <th>Personality and Poise</th>
+        <th>Average</th>
+      </tr>
+      {% for ave in average %}
+        {% if ave.category == 'personality and poise' %}
+        <tr>
+          <td>{{ ave.question }}</td>
+          <td class="score">{{ ave.average }}</td>
+        </tr>
+        {% endif %}
+      {% endfor %}
+    </table>
+
+    <div class="title-sentiment">Sentiment based on Comments</div>
+    <div class="sentiment-analysis">
+      {% if sentiment >= 40 and sentiment <= 60 %}
+      <div id="sentiment"><img src="{% static 'images/sentiment/neutral.png' %}" alt="" id="percent"></div>
+      {% elif sentiment > 60 %}
+      <div id="sentiment"><img src="{% static 'images/sentiment/happy.png' %}" alt="" id="percent"></div>
+      {% elif sentiment < 40 %}
+      <div id="sentiment"><img src="{% static 'images/sentiment/sad.png' %}" alt="" id="percent"></div>
+      {% endif %}
+      <span id="percentage">{{sentiment}}%</span>
+    </div>
+
+    <div class="comment-section">
+      <button type="button" class="comment-button" onclick="myFunction()">Show Comments ({{comment_number}})</button>
+      <div id="comments">
+        {% for comment in comments %}
+        <div class="comment">
+          <div class="message">
+            {{comment.comment}}
+          </div>
+          <div class="sentiment">
+            {{comment.sentiment}}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+
+    <a class="back-button" href="{% url 'view_instructor_chart_student' %}">Back</a>
+  </div>
+
+  <script>
+    var x = document.getElementById('percentage').innerHTML
+    var y = document.getElementById('sentiment')
+    y.style.width = x
+
+    function myFunction() {
+      var x = document.getElementById("comments");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+{% endblock %}

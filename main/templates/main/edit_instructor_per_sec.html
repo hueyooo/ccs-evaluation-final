@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %} 
+{% block title %}Evaluation{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/edit_instructor_per_sec.css' %}{% endblock %} 
+{% block content %}
+  <ul>
+    <div class="title">Edit Instructor/{{ section }}</div>
+    {% for inst in instructor %}
+      <li>
+        <img src="{{ inst.inst.user.image.url }}" />
+        <div class="details">
+          <h3>{{ inst.inst }}</h3>
+          <p>{{ inst.subj }}</p>
+        </div>
+        <div class="function">
+          <a href="{% url 'delete_instructor' section=section id=inst.id %}" class="red">Delete</a>
+          <a href="{% url 'edit_instructor_per_id' section=section id=inst.inst.user.id %}" class="green">Edit</a>
+        </div>
+      </li>
+    {% endfor %}
+    <a href="{% url 'add_instructor' section=section %}">
+      <div class="func-button">
+        <img src="{% static 'images/icons/plus.png' %}" />
+        <h3>
+          Add an Instructor
+        </h3>
+      </div>
+    </a>
+    <a href="/evaluation/edit-choice/edit-instructor">
+      <div class="func-button back">
+        Go back 
+      </div>
+    </a>
+  </ul>
+{% endblock %}

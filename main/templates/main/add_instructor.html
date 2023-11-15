@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% block title %}Update Instructor{% endblock %}
+{% load static %}
+{% block style %}{% static 'css/updt_instructor_per_sec.css' %}{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="title-header">
+    <p>Edit Instructor/{{ section }}/Add Instructor</p>
+  </div>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="section">Section</label>
+    <input name="section" value="{{ section }}" disabled>
+    <label for="instructor">Instructor</label>
+    <select name="instructor">
+      {% for inst in instructors %}
+      <option value="{{ inst.user_id }}">{{ inst }}</option> 
+      {% endfor %}
+    </select>
+    <label for="subject">Subject</label>
+    <select name="subject">
+      {% for sub in subjects %}
+      <option value="{{ sub.id }}">{{ sub.description }}</option> 
+      {% endfor %}
+    </select>
+    <a class="back-button" href="{% url 'edit_instructor_per_section' section=section %}">Back</a>
+    <button type="submit" class="btn btn-success">Add</button>
+  </form>
+{% endblock %}

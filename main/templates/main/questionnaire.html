@@ -1,0 +1,317 @@
+{% extends "main/base.html" %} 
+{% block title %}Evaluation{% endblock %} 
+{% load static %}
+{% block style %}{% static 'css/questionnaire.css' %}{% endblock %}
+{% block content %}
+  <div class="title-header">
+    <p>Evaluation</p>
+  </div>
+  <form method="post">
+    <ul>
+      {% for message in messages %}
+        <li> {{message}}</li>
+      {% endfor %}
+    </ul>
+    <p class="ratings">
+      <span>5-Strongly Agree</span>
+      <span>4-Agree</span>
+      <span>3-Neutral</span>
+      <span>2-Disagree</span>
+      <span>1-Strongly Disagree</span>
+    </p>
+    {% csrf_token %}
+    <center>
+      <div id="page1" class="questionnaire-page">
+        <table>
+          <tr>
+            <th>Course Planning/Preparation</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+          </tr>
+          {% for question in questions %}
+          {% if question.category == 'course planning' %}
+          <tr>
+            <td>{{ question.question }}</td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=5 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=4 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=3 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=2 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=1 required/>
+              </label>
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </table>
+      </div>
+      <div id="page2" class="questionnaire-page">
+        <table>
+          <tr>
+            <th>Instructional Delivery</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+          </tr>
+          {% for question in questions %}
+          {% if question.category == 'instructional delivery' %}
+          <tr>
+            <td>{{ question.question }}</td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=5 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=4 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=3 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=2 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=1 required/>
+              </label>
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </table>
+      </div>
+      <div id="page3" class="questionnaire-page">
+        <table>
+          <tr>
+            <th>Assessment of Student Learning</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+          </tr>
+          {% for question in questions %}
+          {% if question.category == 'assessment of student learning' %}
+          <tr>
+            <td>{{ question.question }}</td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=5 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=4 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=3 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=2 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=1 required/>
+              </label>
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </table>
+      </div>
+      <div id="page4" class="questionnaire-page">
+        <table>
+          <tr>
+            <th>Classroom Management</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+          </tr>
+          {% for question in questions %}
+          {% if question.category == 'classroom management' %}
+          <tr>
+            <td>{{ question.question }}</td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=5 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=4 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=3 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=2 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=1 required/>
+              </label>
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </table>
+      </div>
+      <div id="page5" class="questionnaire-page">
+        <table>
+          <tr>
+            <th>Personality and Poise</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+          </tr>
+          {% for question in questions %}
+          {% if question.category == 'personality and poise' %}
+          <tr>
+            <td>{{ question.question }}</td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=5 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=4 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=3 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=2 required/>
+              </label>
+            </td>
+            <td>
+              <label class="radio-label">
+                <input type="radio" name="{{ question.id }}" class="radio-input" value=1 required/>
+              </label>
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </table>
+      </div>
+      <div id="page6" class="comment-container">
+        <h2>Comments</h2>
+        <textarea class="comment" name="comment" type="text" minlength="0" rows="5"></textarea>
+      </div>
+      <div class="pagination" id="pagination">
+        <a class="back-button" href="/evaluation" id="backBtn">Back to Evaluation</a>
+        <a href="#" id="firstPage" class="pagination-link" onclick="prevPage()">&lt;</a>
+        <a href="#" id="lastPage" class="pagination-link" onclick="nextPage()"> &gt; </a>
+        <button type="submit" class="submit-button" id="submitBtn">Submit</button>
+      </div>   
+    </center>
+  </form>
+
+  <script>
+    var currentPage = 1;
+    var totalPages = 6;
+
+    function changePage(pageNumber) {
+      document.getElementById("page" + currentPage).style.display = "none";
+      currentPage = pageNumber;
+      document.getElementById("page" + currentPage).style.display = "block";
+      updateSubmitButtonVisibility();
+      updateBackButtonVisibility();
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages) {
+        changePage(currentPage + 1);
+        updateFirstButtonVisibility();
+        updateLastButtonVisibility()
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 1) {
+        changePage(currentPage - 1);
+        updateFirstButtonVisibility();
+        updateLastButtonVisibility()
+      }
+    }
+
+    function updateSubmitButtonVisibility() {
+      var submitBtn = document.getElementById("submitBtn");
+      submitBtn.style.display = (currentPage === totalPages) ? "inline-block" : "none";
+    }
+
+    function updateBackButtonVisibility() {
+      var submitBtn = document.getElementById("backBtn");
+      submitBtn.style.display = (currentPage > 1) ? "none" : "inline-block";
+    }
+
+    function updateFirstButtonVisibility() {
+      var submitBtn = document.getElementById("firstPage");
+      if (currentPage === 1) {
+        submitBtn.style.display = "none";
+      }
+      else {
+        submitBtn.style.display = "inline-block";
+      }
+    }
+    function updateLastButtonVisibility() {
+      var submitBtn = document.getElementById("lastPage");
+      if (currentPage === totalPages) {
+        submitBtn.style.display = "none";
+      }
+      else {
+        submitBtn.style.display = "inline-block";
+      }
+    }
+
+    changePage(currentPage);
+    updateFirstButtonVisibility();
+  </script>
+{% endblock %}

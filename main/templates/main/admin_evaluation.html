@@ -1,0 +1,88 @@
+{% extends 'main/base.html' %} 
+{% block title %}Evaluation{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/evaluation.css' %}{% endblock %} 
+{% block content %}
+  <div class="functions">
+    <a href="/evaluation/edit_students_questionnaire">
+      <div class="func-button">
+        <div class="icon">
+          <div class="editquest-icon">
+            <img
+              src="{% static 'images/icons/edit_quest_student.png' %}"
+              alt="editquest"
+            />
+          </div>
+          <div class="text1">Edit Students' Questionnaire</div>
+        </div>
+      </div>
+    </a>
+    <a href="/evaluation/edit_instructors_questionnaire">
+      <div class="func-button">
+        <div class="icon">
+          <div class="editquest-icon">
+            <img
+              src="{% static 'images/icons/edit_quest_instructor.png' %}"
+              alt="editquest"
+            />
+          </div>
+          <div class="text1">Edit Instructors' Questionnaire</div>
+        </div>
+      </div>
+    </a>
+    <a href="/evaluation/view">
+      <div class="func-button">
+        <div class="icon">
+          <div class="viewresponses-icon">
+            <img
+              src="{% static 'images/icons/view_response.png' %}"
+              alt="viewresponses"
+            />
+          </div>
+          <div class="text">View Responses</div>
+        </div>
+      </div>
+    </a>
+    <a href="/evaluation/edit-choice">
+      <div class="func-button">
+        <div class="icon">
+          <div class="add_remove-icon">
+            <img
+              src="{% static 'images/icons/add_remove.png' %}"
+              alt="add_remove"
+            />
+          </div>
+          <div class="text">Add/Remove Instructor</div>
+        </div>
+      </div>
+    </a>
+    <a href="/evaluation/view-subjects">
+      <div class="func-button">
+        <div class="icon">
+          <div class="add_remove-icon">
+            <img
+              src="{% static 'images/icons/subjects.png' %}"
+              alt="view/add"
+            />
+          </div>
+          <div class="text">View/Add Subjects</div>
+        </div>
+      </div>
+    </a>
+    {% if user.role == 'Instructor' %}
+    <a href="/evaluation/dean">
+      <div class="func-button">
+        <div class="icon">
+          <div class="add_remove-icon">
+            <img
+              src="{% static 'images/icons/evaluate.png' %}"
+              alt="evaluate"
+            />
+          </div>
+          <div class="text">Evaluate Chairpersons</div>
+        </div>
+      </div>
+    </a>
+    {% endif %}
+  </div>
+{% endblock %}

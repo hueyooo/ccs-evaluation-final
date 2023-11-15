@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% block title %}Select Role{% endblock %}
+{% load static %}
+{% block style %}{% static 'css/role.css' %}{% endblock %}
+{% block content %}
+  <div class="title-header">
+    <p>Sign Up</p>
+  </div>
+  <div class="role-container">
+    <div class="roles">
+      <a href="{% url 'sign_up' role=roles %}">
+        <div class="student">
+          <img src="{% static 'images/icons/students.png' %}" alt="students">
+          Student
+        </div>
+      </a>
+      <a href="{% url 'sign_up' role=rolei %}">
+        <div class="instructor">
+          <img src="{% static 'images/icons/instructor.png' %}" alt="instructor">
+          Instructor
+        </div>
+      </a>
+    </div>
+  </div>
+{% endblock %}

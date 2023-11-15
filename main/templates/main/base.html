@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% block style %} {% endblock %}" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".profile .profile-button").click(function () {
+          $(this).parent().toggleClass("active");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <a href="/"><img src="{% static 'images/logo.png' %}" alt="logo" /></a>
+      </div>
+      <div class="ccs">
+        COLLEGE of COMPUTING STUDIES
+      </div>
+      <div class="profile">
+        <div class="profile-button">
+          <img src="{{ user.image.url }}" alt="pfp" />
+        </div>
+        <div class="profile-box">
+          <li><h1>{{ user.first_name }}</h1></li>
+          <li><a href="/profile/update">Edit Profile</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation">
+      <ul>
+        <li>
+          <a>
+            <span class="icon"></span>
+            <img
+              src="{% static 'images/logo.png' %}"
+              alt="CCS Image"
+              class="dhvsulogo"
+            />
+          </a>
+        </li>
+
+        <li>
+          <a href="/home">
+            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+            <span class="title">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="/evaluation">
+            <span class="icon"
+              ><ion-icon name="checkmark-circle-outline"></ion-icon>
+            </span>
+            <span class="title">Evaluation</span>
+          </a>
+        </li>
+        {% if user.is_superuser %}
+        <li>
+          <a href="/settings">
+            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+            <span class="title">Setting</span>
+          </a>
+        </li>
+        {% endif %}
+        <li>
+          <a href="/profile/update">
+            <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+            <span class="title">User Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="/logout">
+            <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+            <span class="title">Logout</span>
+          </a>
+        </li>
+      </ul>
+      <div class="toggle"></div>
+    </div>
+
+    <div class="content">{% block content %} {% endblock %}</div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+      let navigation = document.querySelector(".navigation");
+      let toggle = document.querySelector(".toggle");
+      toggle.onclick = function () {
+        navigation.classList.toggle("active");
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/irreg_register_section.css' %}">
+  <title>Document</title>
+  <style>
+    .center{
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+  <script>
+    function addSec() {
+      var checkboxes = document.querySelectorAll(".it-sec");
+      var checkedValues = [];
+
+      checkboxes.forEach(function (checkbox) {
+        if (checkbox.checked) {
+          checkedValues.push(checkbox.value);
+        }
+      });
+
+      var resultDiv = document.getElementById("sec");
+      resultDiv.innerHTML = checkedValues.join(", ");
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="it-container"> 
+      <div class="title-header">Information Technology</div>   
+      <div class="sections">
+        {% for sec in sections%}
+        {% if 'IT' in sec %}
+        <div class="checkbox">
+          <input type="checkbox" name="{{sec}}" value="{{sec}}" class="it-sec">{{sec}}
+        </div>   
+        {% endif%}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="it-container"> 
+      <div class="title-header">Information Systems</div>   
+      <div class="sections">
+        {% for sec in sections%}
+        {% if 'IS' in sec %}
+        <div class="checkbox">
+          <input type="checkbox" name="{{sec}}" value="{{sec}}" class="it-sec">{{sec}}
+        </div>   
+        {% endif%}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="it-container"> 
+      <div class="title-header">Computer Science</div>   
+      <div class="sections">
+        {% for sec in sections%}
+        {% if 'CS' in sec %}
+        <div class="checkbox">
+          <input type="checkbox" name="{{sec}}" value="{{sec}}" class="it-sec">{{sec}}
+        </div>   
+        {% endif%}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="it-container"> 
+      <div class="title-header">Associate in Computer Technology</div>   
+      <div class="sections">
+        {% for sec in sections%}
+        {% if 'ACT' in sec %}
+        <div class="checkbox">
+          <input type="checkbox" name="{{sec}}" value="{{sec}}" class="it-sec">{{sec}}
+        </div>   
+        {% endif%}
+        {% endfor %}
+      </div>
+    </div>
+    <form method="post" onsubmit="return confirm('Are you sure you want to submit this form?');">
+      {% csrf_token %}
+      <div class="textbox">
+        <textarea name="section" id="sec" cols="30" rows="10" readonly required></textarea>
+      </div>
+      <button type="button" onclick="addSec()">Add</button>
+      <button type="submit">Next</button>
+      <button type="button" onclick="resetChecked()">Clear</button>
+      <a href="/logout">Logout</a>
+    </form>
+  </div>
+
+  <script>
+    function resetChecked(){
+      var get = document.getElementsByClassName('it-sec');
+
+      for (var i=0; i<get.length; i++){
+        get[i].checked= false;
+      }
+
+      var clear = document.getElementById('sec');
+      clear.innerHTML = ''
+    };
+  </script>
+</body>
+</html>

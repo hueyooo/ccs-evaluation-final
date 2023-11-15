@@ -1,0 +1,55 @@
+{% extends "main/base.html" %} 
+{% block title %}Home{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/home.css' %}{% endblock %} 
+{% block content %} 
+  <div class="functions">
+  {% if user.instructor.access_lvl == 3 or user.is_superuser %}
+    <a href="/settings">
+      <div class="settings-box">
+        <div class="settings-desc">
+          <div class="setiings-icon">
+            <img src="{% static 'images/icons/settings.png' %}" alt="settings" />
+          </div>
+          <h1>SETTINGS</h1>
+        </div>
+      </div>
+    </a>
+  {% endif %}
+    <a href="/evaluation">
+      <div class="evaluation-box">
+        <div class="eval-desc">
+          <div class="eval-icon">
+            <img
+              src="{% static 'images/icons/evaluation.png' %}"
+              alt="evaluation"
+            />
+          </div>
+          <h1>EVALUATION</h1>
+        </div>
+      </div>
+    </a>
+
+    <a href="/profile/update">
+      <div class="user-box">
+        <div class="user-desc">
+          <div class="user-icon">
+            <img src="{% static 'images/icons/user.png' %}" alt="user" />
+          </div>
+          <h1>USER</h1>
+        </div>
+      </div>
+    </a>
+
+    <a href="/logout">
+      <div class="logout-box">
+        <div class="logout-desc">
+          <div class="logout-icon">
+            <img src="{% static 'images/icons/logout.png' %}" alt="logout" />
+          </div>
+          <h1>LOGOUT</h1>
+        </div>
+      </div>
+    </a>
+  </div> 
+{% endblock %}

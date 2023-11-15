@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+{% block title %}Register{% endblock %}
+{% load static %}
+{% block style %}{% static 'css/register.css' %}{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    
+    {{form|crispy}}
+    {{form2|crispy}}
+    <button type="submit" class="btn btn-success">Sign Up</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,138 @@
+{% extends 'main/base.html' %} 
+{% block title %}View Completion Chart{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/chart.css' %}{% endblock %}
+{% block content %}
+  <div class="title-header">
+    <p>Completion Chart</p>
+  </div>
+  <div class="functions">
+    <div class="course">Information Technology</div>
+    <hr size="2px" width="100%" color="gray"/>
+    <div class="bsit">
+      <div class="column">
+        {% for sec in section %} 
+          {% if "IT" in sec %}
+          <div class="row">
+            <div class="func-button">
+              <span class="display"> {{ sec }} </span>
+            </div>
+            <div class="completion-bar">
+              <div id="{{sec}}-progress" class="completion-percentage"></div>
+              {% for percent in percentage %}
+              {% if percent.section == sec %}
+              <span id="{{sec}}" class="percentage">{{percent.percent}}%</span>
+              {% endif %}
+              {% endfor%}
+            </div>
+            {% for z in value %}
+              {% for a in total %}
+                {% if z.section == sec and a.section == sec %}
+                  <div class="value"> 
+                    {{ z.count }}/{{ a.count }}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
+          {% endif %} 
+        {% endfor %}
+      </div>
+    </div>
+    <hr size="2px" width="100%" color="gray"/>
+    <div class="course">Information System/Computer Science/Associate in Computer Technology</div>
+    <hr size="2px" width="100%" color="gray"/>
+    <div class="bsis-bscs-act">
+      <div class="column">
+        {% for sec in section %} 
+          {% if "IS" in sec %}
+          <div class="row">
+            <div class="func-button">
+              <span class="display"> {{ sec }} </span>
+            </div>
+            <div class="completion-bar">
+              <div id="{{sec}}-progress" class="completion-percentage"></div>
+              {% for percent in percentage %}
+              {% if percent.section == sec %}
+              <span id="{{sec}}" class="percentage">{{percent.percent}}%</span>
+              {% endif %}
+              {% endfor%}
+            </div>
+            {% for z in value %}
+              {% for a in total %}
+                {% if z.section == sec and a.section == sec %}
+                  <div class="value"> 
+                    {{ z.count }}/{{ a.count }}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
+          {% endif %} 
+        {% endfor %}
+        {% for sec in section %} 
+          {% if "CS" in sec %}
+          <div class="row">
+            <div class="func-button">
+              <span class="display"> {{ sec }} </span>
+            </div>
+            <div class="completion-bar">
+              <div id="{{sec}}-progress" class="completion-percentage"></div>
+              {% for percent in percentage %}
+              {% if percent.section == sec %}
+              <span id="{{sec}}" class="percentage">{{percent.percent}}%</span>
+              {% endif %}
+              {% endfor%}
+            </div>
+            {% for z in value %}
+              {% for a in total %}
+                {% if z.section == sec and a.section == sec %}
+                  <div class="value"> 
+                    {{ z.count }}/{{ a.count }}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
+          {% endif %} 
+        {% endfor %}
+        {% for sec in section %} 
+          {% if "ACT" in sec %}
+          <div class="row">
+            <div class="func-button">
+              <span class="display"> {{ sec }} </span>
+            </div>
+            <div class="completion-bar">
+              <div id="{{sec}}-progress" class="completion-percentage"></div>
+              {% for percent in percentage %}
+              {% if percent.section == sec %}
+              <span id="{{sec}}" class="percentage">{{percent.percent}}%</span>
+              {% endif %}
+              {% endfor%}
+            </div>
+            {% for z in value %}
+              {% for a in total %}
+                {% if z.section == sec and a.section == sec %}
+                  <div class="value"> 
+                    {{ z.count }}/{{ a.count }}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
+          {% endif %} 
+        {% endfor %}
+      </div>
+    </div>
+    <a class="back-button" href="/evaluation/view">Back</a>
+  </div>
+
+  <script>
+    {% for sec in section %}
+      var x = document.getElementById('{{sec}}').innerHTML;
+      var y = document.getElementById('{{sec}}-progress');
+      y.style.maxWidth = x;
+      y.style.animation = 'fillBars 2.5s 1';
+    {% endfor %}
+  </script>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+{% block title %}Update Subject{% endblock %}
+{% load static %}
+{% block style %}{% static 'css/updt_profile.css' %}{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="title-header">
+    <p>Edit Subject</p>
+  </div>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form|crispy}}
+    <a class="back-button" href="/evaluation/view-subjects">Back</a>
+    <button type="submit" class="btn btn-success">Update</button>
+  </form>
+{% endblock %}

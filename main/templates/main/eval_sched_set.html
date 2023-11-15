@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %} 
+{% block title %}Set Evaluation Schedule{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/eval_sched.css' %}{% endblock %} 
+{% block content %}
+  <div class="title-header">
+    <p>Set Evaluation Schedule</p>
+  </div>
+  <form method="post">
+    <ul>
+      {% for message in messages %}
+        <li> {{message}}</li>
+      {% endfor %}
+    </ul>
+    {% csrf_token %}
+    {{ form }}
+    <div class="buttons">
+      <a class="back-button" href="/settings">Back</a>
+      <button type="submit">Set Schedule</button>
+    </div>
+  </form>
+{% endblock %}

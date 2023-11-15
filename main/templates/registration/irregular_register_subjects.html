@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/irreg_register_subject.css'%}">
+  <title>Document</title>
+  <style>
+    .center{
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+  <script>
+    function addSub() {
+      var checkboxes = document.querySelectorAll(".subj");
+      var checkedValues = [];
+
+      checkboxes.forEach(function (checkbox) {
+        if (checkbox.checked) {
+          checkedValues.push(checkbox.value);
+        }
+      });
+
+      var resultDiv = document.getElementById("sec");
+      resultDiv.innerHTML = checkedValues.join("\n");
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    {% for sec in sections%}
+    <div class="sec-container">
+      <div class="title-header">
+        {{ sec }}
+      </div>
+      <div class="sections">
+        {% for sub in subjects %}
+        {% if sub.section == sec %}
+        <div class="checkbox">
+          <input type="checkbox" name="{{ sub.code }}" value="{{ sub.code }},{{ sec }}" class="subj">{{ sub.description }}/{{ sub.code }}
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>   
+    </div>
+    {% endfor %}
+    <form method="post" onsubmit="return confirm('Are you sure you want to submit this form?');">
+      {% csrf_token %}
+      <div class="textbox">
+        <textarea name="subjects" id="sec" cols="30" rows="10" readonly required></textarea>
+      </div>
+      <button type="button" onclick="addSub()">Add</button>
+      <button type="submit">Save</button>
+      <button type="button" onclick="resetChecked()">Clear</button>
+      <a href="/irregular">Back</a>
+    </form>
+  </div>
+  <script>
+    // Get all checkboxes
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    // Add event listeners to all checkboxes
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function () {
+        if (this.checked) {
+          // When a checkbox is checked, disable other checkboxes with the same value
+          const name = this.name;
+          checkboxes.forEach(otherCheckbox => {
+            if (otherCheckbox.name === name && otherCheckbox !== this) {
+              otherCheckbox.disabled = true;
+            }
+          });
+        } else {
+          // When a checkbox is unchecked, enable all checkboxes
+          const name = this.name;
+          checkboxes.forEach(otherCheckbox => {
+            if (otherCheckbox.name === name && otherCheckbox !== this) {
+              otherCheckbox.disabled = false;
+            }
+          });
+        }
+      });
+    });
+  </script>
+  <script>
+    function resetChecked(){
+      var get = document.getElementsByClassName('subj');
+
+      for (var i=0; i<get.length; i++){
+        get[i].checked= false;
+      }
+
+      var clear = document.getElementById('sec');
+      clear.innerHTML = ''
+    };
+  </script>
+</body>
+</html>

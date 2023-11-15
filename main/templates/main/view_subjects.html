@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %} 
+{% block title %}Subjects{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/view_subjects.css' %}{% endblock %} 
+{% block content %}
+  <ul>
+    <div class="title">Subjects</div>
+    <a href="{% url 'add_subjects_pick' %}">
+      <div class="func-button">
+        <img src="{% static 'images/icons/plus.png' %}" />
+        <h3>
+          Add Subject/s
+        </h3>
+      </div>
+    </a>
+    {% for subj in subjects %}
+      <li>
+        <div class="details">
+          <h3>{{ subj.description }}</h3>
+          <p>{{ subj.code }}</p>
+        </div>
+        <div class="function">
+          <a href="{% url 'delete_subjects' id=subj.id %}" class="red">Delete</a>
+          <a href="{% url 'edit_subjects' id=subj.id %}" class="green">Edit</a>
+        </div>
+      </li>
+    {% endfor %}
+    <a href="/evaluation">
+      <div class="func-button back">
+        Go back 
+      </div>
+    </a>
+  </ul>
+{% endblock %}

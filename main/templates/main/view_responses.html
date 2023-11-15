@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %} 
+{% block title %}View Responses{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/evaluation.css' %}{% endblock %} 
+{% block content %}
+    <div class="functions">
+      <a href="/evaluation/view/completion-chart">
+        <div class="func-button">
+          <div class="icon">
+            <div class="editquest-icon">
+              <img
+                src="{% static 'images/icons/completion_chart.png' %}"
+                alt="completion-chart"
+              />
+            </div>
+            <div class="text2">View Detailed Completion Chart</div>
+          </div>
+        </div>
+      </a>
+      <a href="/evaluation/view/instructor-chart">
+        <div class="func-button">
+          <div class="icon">
+            <div class="editquest-icon">
+              <img
+                src="{% static 'images/icons/inst_chart.png' %}"
+                alt="inst_chart"
+              />
+            </div>
+            <div class="text1">View Instructors' Charts</div>
+          </div>
+        </div>
+      </a>
+      <a href="/evaluation">
+        <div class="func-button back">
+          <img src="{% static 'images/icons/back.png' %}" alt="">
+          <span>Go back to Evaluation Home</span>
+        </div>
+      </a>
+    </div>
+{% endblock %}

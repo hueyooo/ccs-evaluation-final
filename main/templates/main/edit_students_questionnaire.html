@@ -1,0 +1,122 @@
+{% extends "main/base.html" %} 
+{% block title %}Edit Questionnaire{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/questionnaire.css' %}{% endblock %} 
+{% block content %}
+  <center>
+    <table>
+      <tr>
+        <th class="edit">Course Planning/Preparation</th>
+        <th></th>
+      </tr>
+      {% for question in questions %} 
+      {% if question.category == 'course planning' %}
+      <tr>
+        <td>{{ question.question }}</td>
+        <td class="func-buttons">
+          <a href="{% url 'update_students_questionnaire' id=question.id %}" class="green">Edit</a>
+          <a href="{% url 'delete_students_questionnaire' id=question.id %}" class="red">Delete</a>
+        </td>
+      </tr>
+      {% endif %} 
+      {% endfor %}
+      <tr>
+        <td>Add question</td>
+        <td class="func-buttons">
+          <a href="{% url 'add_students_questionnaire' category='course planning' %}" class="green">Add</a>
+        </td>
+      </tr>
+
+      <tr>
+        <th class="edit">Instructional Delivery</th>
+        <th></th>
+      </tr>
+      {% for question in questions %} 
+      {% if question.category == 'instructional delivery' %}
+      <tr>
+        <td>{{ question.question }}</td>
+        <td class="func-buttons">
+          <a href="{% url 'update_students_questionnaire' id=question.id %}" class="green">Edit</a>
+          <a href="{% url 'delete_students_questionnaire' id=question.id %}" class="red">Delete</a>
+        </td>
+      </tr>
+      {% endif %} 
+      {% endfor %}
+      <tr>
+        <td>Add question</td>
+        <td class="func-buttons">
+          <a href="{% url 'add_students_questionnaire' category='instructional delivery' %}" class="green">Add</a>
+        </td>
+      </tr>
+
+      <tr>
+        <th class="edit">Assessment of Student Learning</th>
+        <th></th>
+      </tr>
+      {% for question in questions %} 
+      {% if question.category == 'assessment of student learning' %}
+      <tr>
+        <td>{{ question.question }}</td>
+        <td class="func-buttons">
+          <a href="{% url 'update_students_questionnaire' id=question.id %}" class="green">Edit</a>
+          <a href="{% url 'delete_students_questionnaire' id=question.id %}" class="red">Delete</a>
+        </td>
+      </tr>
+      {% endif %} 
+      {% endfor %}
+      <tr>
+        <td>Add question</td>
+        <td class="func-buttons">
+          <a href="{% url 'add_students_questionnaire' category='assessment of student learning' %}" class="green">Add</a>
+        </td>
+      </tr>
+
+      <tr>
+        <th class="edit">Classroom Management</th>
+        <th></th>
+      </tr>
+      {% for question in questions %} 
+      {% if question.category == 'classroom management' %}
+      <tr>
+        <td>{{ question.question }}</td>
+        <td class="func-buttons">
+          <a href="{% url 'update_students_questionnaire' id=question.id %}" class="green">Edit</a>
+          <a href="{% url 'delete_students_questionnaire' id=question.id %}" class="red">Delete</a>
+        </td>
+      </tr>
+      {% endif %} 
+      {% endfor %}
+      <tr>
+        <td>Add question</td>
+        <td class="func-buttons">
+          <a href="{% url 'add_students_questionnaire' category='classroom management' %}" class="green">Add</a>
+        </td>
+      </tr>
+
+      <tr>
+        <th class="edit">Personality and Poise</th>
+        <th></th>
+      </tr>
+      {% for question in questions %} 
+      {% if question.category == 'personality and poise' %}
+      <tr>
+        <td>{{ question.question }}</td>
+        <td class="func-buttons">
+          <a href="{% url 'update_students_questionnaire' id=question.id %}" class="green">Edit</a>
+          <a href="{% url 'delete_students_questionnaire' id=question.id %}" class="red">Delete</a>
+        </td>
+      </tr>
+      {% endif %} 
+      {% endfor %}
+      <tr>
+        <td>Add question</td>
+        <td class="func-buttons">
+          <a href="{% url 'add_students_questionnaire' category='personality and poise' %}" class="green">Add</a>
+        </td>
+      </tr>
+    </table>
+    <div class="back">
+      <a class="back-button" href="/evaluation">Back</a>
+    </div>
+  </center>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %} 
+{% block title %}Pick a function{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/edit_choice.css' %}{% endblock %}
+{% block content %}
+  <div class="title-header">
+    <p>Instructor per Section</p>
+  </div>
+  <div class="functions">
+    <div class="buttons">
+      <a href="{% url 'add_bulk_instructor_per_section' %}">
+        <div class="bulk">
+          <span>Bulk Register</span>
+        </div>
+      </a>
+      <a href="{% url 'edit_instructor' %}">
+        <div class="single">
+          <span>Single Register/Edit</span>
+        </div>
+      </a>
+    </div>
+    <a class="back-button" href="/evaluation">Back</a>
+  </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %} 
+{% block title %}Edit Evaluation Schedule{% endblock %} 
+{% load static %} 
+{% block style %}{% static 'css/eval_sched.css' %}{% endblock %} 
+{% block content %}
+<div class="title-header">
+  <p>Edit Evaluation Schedule</p>
+</div>
+<form method="post">
+  <ul>
+    {% for message in messages %}
+      <li> {{message}}</li>
+    {% endfor %}
+  </ul>
+  {% csrf_token %}
+  {{ form }}
+  <div class="buttons">
+    <a class="back-button" href="/settings">Back</a>
+    <button type="button" id="delete">Close Evaluation</button>
+    <button type="submit">Update</button> 
+  </div> 
+</form>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const myButton = document.getElementById("delete");
+
+      myButton.addEventListener("click", function () {
+          // Customize the warning message and style here
+          const warningMessage = "Are you sure you want to proceed?";
+
+          if (confirm(warningMessage)) {
+              // User clicked OK, proceed with the action
+              alert("Evaluation schedule deleted");
+              window.location.href = "{% url 'delete_evalsched' %}";
+          } else {
+              // User clicked Cancel, do nothing
+          }
+      });
+  });
+</script>
+{% endblock %}
