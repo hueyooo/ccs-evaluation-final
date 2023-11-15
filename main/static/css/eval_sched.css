@@ -1,0 +1,109 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat-Bold.otf);
+}
+
+.content {
+  padding-top: 250px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content .title-header {
+  width: 430px;
+  background: #61c0d3;
+  border: 2px solid #464646;
+  border-bottom: none;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 10px;
+  padding-left: 30px;
+  font-size: 20px;
+}
+
+.content .title-header p {
+  font-size: 20px;
+  color: white;
+}
+
+form {
+  width: 430px;
+  border: 2px solid #464646;
+  border-top: none;
+  padding: 30px;
+  background: #fff;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-family: montserrat;
+}
+
+form label {
+  color: #3c3c3c;
+  font-size: 18px;
+  padding: 10px;
+}
+
+form input {
+  font-family: montserrat;
+}
+
+#id_date_from,
+#id_date_to {
+  display: block;
+  border: 2px solid #ccc;
+  width: 95%;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button, .back-button{
+  float: right;
+  background: #61c0d3;
+  font-family: montserrat;
+  padding: 10px 15px;
+  color: #0a0a0a;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: none;
+  font-size: 13px;
+  transition: all .2s;
+}
+
+button:hover, .back-button:hover{
+  background: #38688e;
+  color: white;
+  cursor: pointer;
+}
+
+.content form ul li {
+  margin: 0;
+  margin-left: 9px;
+  color: black;
+  background-color: rgb(59, 233, 59);
+  padding: 5px;
+  text-align: center;
+  border-radius: 2px;
+  font-size: 13px;
+  width: 95%;
+  font-family: montserrat;
+  list-style: none;
+}
+
+.content form .errorlist li {
+  margin: 0;
+  margin-left: 9px;
+  color: #4c4c4c;
+  background-color: #ffc3c3;
+  padding: 5px;
+  text-align: center;
+  border-radius: 2px;
+  font-size: 13px;
+  width: 95%;
+  font-family: montserrat;
+  list-style: none;
+}

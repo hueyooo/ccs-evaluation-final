@@ -1,0 +1,114 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat-SemiBold.otf);
+}
+
+* {
+  font-family: montserrat;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('../images/bg-images/login-bg.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+
+  background-size: cover;
+  width: auto;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.logo {
+  margin: 0;
+  width: 1000px;
+}
+
+.logo-pic {
+  width: 300px;
+  justify-content: center;
+  margin-left: 348px;
+  margin-bottom: 30px;
+}
+
+form {
+  width: 430px;
+  border: 2px solid #ccc;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+}
+
+form .errorlist {
+  list-style: none;
+  margin-bottom: 15px;
+  padding: 0;
+}
+
+form .errorlist li {
+  margin: 0;
+  color: #646464;
+  background-color: #ffc3c3;
+  padding: 5px;
+  text-align: center;
+  border-radius: 2px;
+  font-size: 13px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  color: #3c3c3c;
+  font-size: 18px;
+  padding: 10px;
+}
+
+input {
+  display: block;
+  border: 2px solid #ccc;
+  width: 95%;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+button {
+  float: right;
+  background: #61c0d3;
+  padding: 10px 15px;
+  color: #0a0a0a;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.reset-link {
+  text-decoration: none;
+  color: #0066ff;
+}
+
+.reset-link:hover {
+  text-decoration: underline;
+}

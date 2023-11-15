@@ -1,0 +1,91 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat-SemiBold.otf);
+}
+
+* {
+  font-family: montserrat;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.it-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  position: relative;
+  float: left;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.title-header {
+  padding: 10px;
+  background: #61c0d3;
+  font-size: 18px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+}
+
+.sections {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.it-sec {
+  cursor: pointer;
+}
+
+.checkbox {
+  height: 20px;
+  width: 80px;
+  background: ghostwhite;
+  margin: 6px;
+  text-align: center;
+  font-size: 15px;
+  padding: 3px 0;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+form a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-size: 14px;
+  padding-top: 6px;
+}
+
+form button, form a {
+  height: 28px;
+  cursor: pointer;
+  background: #61c0d3;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: all .2s;
+  margin-bottom: 10px;
+}
+
+form button {
+  height: 34px;
+}
+
+form button:hover, form a:hover {
+  background: #38688e;
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 30px;
+  top: 300px;
+  justify-content: center;
+}

@@ -1,0 +1,128 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat-Bold.otf);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 140px;
+}
+
+.content .functions {
+  width: 600px;
+  margin: auto;
+  background: #f4f4f4;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #707070;
+  border-top: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.content .title-header p {
+  color: white;
+  font-size: 20px;
+}
+
+.content .title-header {
+  width: 600px;
+  background: #61c0d3;
+  border: 2px solid #707070;
+  border-bottom: none;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 10px;
+  padding-left: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.content .functions .course {
+  margin-right: auto;
+  font-family: montserrat;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.content .functions .column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content .functions .column .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.func-button {
+  padding: 10px;
+  overflow: auto;
+  background: #61c0d3;
+  width: 70px;
+  height: 40px;
+  color: white;
+  margin: 5px 0;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  transition: .15s;
+  text-align: center;
+  font-family: montserrat;
+}
+
+.completion-bar {
+  margin: 0;
+  background: white;
+  width: 400px;
+  height: 40px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.completion-percentage {
+  height: 40px;
+  background: #38688e;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.percentage {
+  display: none;
+}
+
+.content .functions .column .row .value {
+  font-family: montserrat;
+  margin-left: 5px;
+}
+
+.back-button {
+  background-color: #61c0d3;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: montserrat;
+  font-size: 13px;
+  margin: 10px;
+  transition: all .15s;
+}
+
+.back-button:hover {
+  color: white;
+  background-color: #38688e;
+}
+
+@keyframes fillBars{
+  from{
+    width: 0;
+  }
+  to{
+    width: 100%;
+  }
+}

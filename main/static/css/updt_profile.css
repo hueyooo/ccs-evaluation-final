@@ -1,0 +1,131 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat-SemiBold.otf);
+}
+
+.content {
+  padding-top: 150px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content .title-header {
+  width: 430px;
+  background: #61c0d3;
+  border: 2px solid #464646;
+  border-bottom: none;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 10px;
+  padding-left: 30px;
+  font-size: 20px;
+}
+
+.content .title-header p {
+  font-size: 20px;
+  color: white;
+}
+
+form {
+  width: 430px;
+  border: 2px solid #464646;
+  border-top: none;
+  padding: 30px;
+  background: #fff;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-family: montserrat;
+}
+
+form label, .mb-3 .form-text {
+  color: #3c3c3c;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.mb-3 .form-text {
+  font-size: 13px;
+  color: #a5a5a5;
+  margin-bottom: 10px;
+}
+
+form input {
+  font-family: montserrat;
+}
+
+.mb-3 .emailinput,
+.mb-3 .textinput {
+  display: block;
+  border: 2px solid #ccc;
+  width: 95%;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+#div_id_image label {
+  display: block;
+}
+
+.input-group, .input-group a{
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+.input-group a{
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+#div_id_image .input-group {
+  display: none;
+}
+
+#id_image {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 22px;
+  width: 95%;
+}
+
+form ::-webkit-file-upload-button {
+  color: #ffffff;
+  font-family: montserrat;
+  background: #61c0d3;
+  padding: 20px;
+  border: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  transition: all .15s;
+}
+
+::-webkit-file-upload-button:hover {
+  background: #38688e;
+}
+
+.text-break a {
+  width: 200px;
+}
+
+button, .back-button{
+  float: right;
+  background: #61c0d3;
+  font-family: montserrat;
+  padding: 10px 15px;
+  color: #0a0a0a;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: none;
+  font-size: 13px;
+  transition: all .2s;
+}
+
+button:hover, .back-button:hover{
+  background: #38688e;
+  color: white;
+  cursor: pointer;
+}

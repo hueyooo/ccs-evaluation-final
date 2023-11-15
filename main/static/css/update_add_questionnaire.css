@@ -1,0 +1,63 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat-Bold.otf);
+}
+
+form {
+  width: 430px;
+  border: 2px solid #ccc;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  font-family: montserrat;
+}
+
+form label, .mb-3 .form-text {
+  color: #3c3c3c;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.mb-3 .form-text {
+  font-size: 13px;
+  color: #a5a5a5;
+  margin-bottom: 10px;
+}
+
+.mb-3 .textinput,
+#id_question {
+  display: block;
+  border: 2px solid #ccc;
+  width: 95%;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form .form-check{
+  padding: 5px 10px;
+}
+
+form .form-check label{
+  font-size: 15px;
+}
+
+button, .back-button {
+  float: right;
+  background: #61c0d3;
+  font-family: montserrat;
+  padding: 10px 15px;
+  color: #0a0a0a;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: none;
+  font-size: 13px;
+}
+
+button:hover, .back-button:hover {
+  opacity: 0.7;
+  transition: 0.15s;
+  cursor: pointer;
+} 
+

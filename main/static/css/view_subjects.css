@@ -1,0 +1,121 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat-Bold.otf);
+}
+
+.content ul .title {
+  font-family: montserrat;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.content ul {
+  list-style-type: none;
+  width: 1000px;
+  margin: auto;
+  padding: 20px;
+  background: transparent;
+  border: 5px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 25px 25px rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+
+.content ul li img,
+.content ul a div img {
+  float: left;
+  margin: 0 15px 0 0;
+  width: 50px;
+  border-radius: 50px;
+}
+
+.content ul li p {
+  font: 200 12px/1.5 montserrat;
+  border-radius: 10px;
+  font-size: 15px;
+  padding-left: 40px;
+}
+
+.content ul li h3 {
+  background: #ffe344;
+  font-family: montserrat;
+  font-size: 22px;
+  border-radius: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 20px;
+}
+
+.content ul li {
+  position: relative;
+}
+
+.content ul li,
+.content ul a .func-button {
+  padding: 10px;
+  overflow: auto;
+  background: #61c0d3;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: all .2s;
+}
+
+.content ul a .func-button h3 {
+  padding-top: 10px;
+}
+
+.content ul li span {
+  display: block;
+  float: right;
+}
+
+.content ul li span.green {
+  color: #38688e;
+}
+
+.content ul a .func-button:hover {
+  background: #38688e;
+  cursor: pointer;
+}
+
+.content ul .back {
+  padding: 10px;
+  overflow: auto;
+  background: #61c0d3;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.green, .red {
+  position: absolute;
+  font-size: 18px;
+  margin: 0 5px;
+  height: 27px;
+  padding: 3px 5px 0 5px;
+  align-items: center;
+  border-radius: 5px;
+  transition: all .2s;
+}
+
+.green {
+  top: 40px;
+  right: 110px;
+  background: rgb(152, 255, 152);
+}
+
+.red {
+  top: 40px;
+  right: 26px;
+  background: rgb(209, 78, 78);
+}
+
+.green:hover {
+  background: rgb(57, 151, 57);
+  color: white;
+}
+.red:hover {
+  background: rgb(164, 34, 34);
+  color: white;
+}

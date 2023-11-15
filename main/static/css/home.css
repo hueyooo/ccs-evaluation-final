@@ -1,0 +1,177 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat-Bold.otf);
+}
+
+.content .functions a {
+  margin-top: 50px;
+}
+
+.settings-desc img, .eval-desc img,
+.user-desc img, .logout-desc img {
+  height: 50px;
+  width: 50px;
+}
+
+.settings-desc, .eval-desc,
+.user-desc, .logout-desc {
+  display: block;
+  text-align: right;
+  position: relative;
+}
+
+.content h1 {
+  font-size: 20px;
+  color: white;
+  -webkit-text-stroke: 1px black;
+}
+
+.settings-box, .evaluation-box,
+.user-box, .logout-box {
+  height: 500px;
+  width: 250px;
+  position: relative;
+  border-radius: 10px;
+  padding: 10px 10px;
+  align-self: end;
+  transition: all .2s;
+  margin-left: 10px;
+}
+
+.settings-box::before {    
+  content: "";
+  background-image: url('../images/bg-images/sett-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
+}
+
+.evaluation-box::before {    
+  content: "";
+  background-image: url('../images/bg-images/eval-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
+}
+
+.user-box::before {    
+  content: "";
+  background-image: url('../images/bg-images/user-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
+}
+
+.logout-box::before {    
+  content: "";
+  /* background-image: url('../images/bg-images/logout-bg.jpg'); */
+  background: #b0d4e3;
+  background-size: cover;
+  background-position: right;
+  border-radius: 10px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
+}
+
+.logout-desc{
+  display: block;
+  text-align: center;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.logout-desc h1{
+  margin-top: -122px;
+  color: azure;
+}
+
+.logout-icon img {
+  display: block;
+  margin-left: 10px;
+  margin-top: 125px;
+  width: 210px; 
+  height: 220px;
+}
+
+.settings-box:hover, .evaluation-box:hover,
+.user-box:hover, .logout-box:hover {
+  box-shadow: 0 5px 10px #38688e ;
+  transform: scale(1.05);
+}
+
+.functions {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+@media (max-width:1525px) {
+  .settings-box, .evaluation-box,
+  .user-box, .logout-box{
+    height: 150px;
+    width: 35rem;
+    position: relative;
+    border-radius: 10px;
+    padding: 10px 10px;
+    align-self: end;
+    transition: 0.15s;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  
+  .functions {
+    display: block;
+  }
+
+  .logout-desc h1 {
+    text-align: right;
+    margin: 0;
+    position: relative;
+    display: block;
+    padding-top: 5px;
+  }
+
+  .logout-icon img {
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    margin-left: auto;
+  }
+}
+
+@media (max-width:825px) {
+  .settings-box, .evaluation-box,
+  .user-box, .logout-box{
+    height: 150px;
+    width: 25rem;
+    position: relative;
+    border-radius: 10px;
+    padding: 10px 10px;
+    align-self: end;
+    transition: 0.15s;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+}

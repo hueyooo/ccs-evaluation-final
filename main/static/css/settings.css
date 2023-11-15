@@ -1,0 +1,89 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat-Bold.otf);
+}
+
+/* body{
+  background-image: url('../images/bg-images/adminblur-bg.png');
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
+.content ul .title {
+  margin-right: auto;
+  margin-bottom: 10px;
+  font-family: montserrat;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.content .functions {
+  width: 80%;
+  margin: auto;
+  background: transparent;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content .functions a .func-button {
+  top: 10;
+  position: relative;
+  padding: 10px;
+  height: 160px;
+  overflow: visible;
+  background: #61c0d3;
+  width: 100%;
+  margin-bottom: 25px;
+  margin-right: -90px;
+  margin-left: 10px;
+  border-radius: 10px;
+  transition: 0.15s;
+  border: 2px solid black;
+}
+
+.content .functions a .func-button:hover {
+  background: #38688e;
+}
+
+.content .functions a .func-button .icon {
+  margin-left: 70px;
+  position: absolute;
+  width: 140px;
+  height: 150px;
+  top: 0;
+  background: #ffe344;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  z-index: 1000;
+}
+
+.set_eval-icon img, .reg_user-icon img {
+  height: 120px;
+  width: 120px;
+  margin-left: 10px;
+  margin-top: 20px;
+  position: absolute;
+}
+
+.text, .text1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  margin-left: 180px;
+  text-align: left;
+  -webkit-text-stroke: 1px black;
+}
+
+.text {
+  margin-top: 40px;
+}
+
+.text1 {
+  margin-top: 20px;
+}

@@ -1,0 +1,83 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat-Bold.otf);
+}
+
+form {
+  width: 430px;
+  border: 2px solid #ccc;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  font-family: montserrat;
+}
+
+form label, .mb-3 .form-text, form .form-check{
+  color: #3c3c3c;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.mb-3 .form-text, .mb-3 .form-text li{
+  font-size: 13px;
+  color: #a5a5a5;
+  margin-bottom: 10px;
+}
+
+.mb-3 .passwordinput,
+.mb-3 .emailinput,
+.mb-3 .textinput,
+form select {
+  display: block;
+  border: 2px solid #ccc;
+  width: 95%;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+form .form-check{
+  padding: 5px 10px;
+}
+
+form .form-check label{
+  font-size: 15px;
+}
+
+#error_1_id_password2 {
+  margin: 0;
+  color: #646464;
+  background-color: #ffc3c3;
+  padding: 5px;
+  text-align: center;
+  border-radius: 2px;
+  font-size: 13px;
+}
+
+#error_1_id_username {
+  margin: 0;
+  color: #646464;
+  background-color: #ffc3c3;
+  padding: 5px;
+  text-align: center;
+  border-radius: 2px;
+  font-size: 13px;
+}
+
+button {
+  float: right;
+  background: #61c0d3;
+  font-family: montserrat;
+  padding: 10px 15px;
+  color: #0a0a0a;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.7;
+  transition: 0.15s;
+  cursor: pointer;
+}
+

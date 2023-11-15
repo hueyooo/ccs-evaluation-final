@@ -1,0 +1,80 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat-Bold.otf);
+}
+
+.content ul .title {
+  margin-right: auto;
+  margin-bottom: 10px;
+  font-family: montserrat;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.content ul {
+  list-style-type: none;
+  width: 1000px;
+  margin: auto;
+  padding: 20px;
+  background: transparent;
+  border: 5px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 25px 25px rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+
+.content ul li img {
+  float: left;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.content ul li p {
+  font: 200 12px/1.5 montserrat;
+  color: rgb(31, 31, 31);
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.content ul li h3 {
+  background: #ffe344;
+  font-size: 22px;
+  /* color: white; */
+  border-radius: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  /* -webkit-text-stroke: 1px black; */
+}
+
+.content ul li {
+  padding: 10px;
+  overflow: auto;
+  background: #61c0d3;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.content ul li span {
+  display: block;
+  float: right;
+}
+
+.content ul li span.green {
+  color: #38688e;
+}
+
+.content ul li:hover {
+  background: #38688e;
+  cursor: pointer;
+}
+
+.content ul a .back {
+  padding: 10px;
+  overflow: auto;
+  background: #61c0d3;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}

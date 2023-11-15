@@ -1,0 +1,160 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../fonts/Montserrat-Bold.otf);
+}
+
+.container {
+  width: 1000px;
+  margin: auto;
+  background: #f4f4f4;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title, .instructor, .subject {
+  margin-right: auto;
+  font-family: montserrat;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.instructor {
+  font-size: 18px;
+}
+
+.subject {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+table {
+  font-family: montserrat;
+  width: 100%;
+  border: 3px solid #000;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th, td {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #000;
+  border-collapse: collapse;
+  padding: 3px;
+}
+
+th {
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  background-color: #e0dfdf;
+}
+
+td {
+  background-color: white;
+}
+
+.score {
+  text-align: center;
+  border-left: 1px solid black;
+}
+
+.back-button {
+  float: right;
+  background: #61c0d3;
+  font-family: montserrat;
+  padding: 10px 15px;
+  color: #0a0a0a;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: none;
+  font-size: 13px;
+}
+
+.back-button:hover {
+  opacity: 0.7;
+  transition: 0.15s;
+  cursor: pointer;
+} 
+
+/* Sentiment */
+.title-sentiment {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: montserrat;
+  color: black;
+}
+
+.sentiment-analysis {
+  margin: 30px 0;
+  background: linear-gradient(to right, red, yellow, rgb(0, 255, 0));
+  width: 600px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+#sentiment {
+  height: 10px;
+  border-radius: 5px;
+  width: 50%;
+}
+
+#percent {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #FFF;
+  float: right;
+  margin-top: -15px;
+  margin-right: -15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#percentage {
+  display: none;
+}
+
+.comment-section {
+  width: 80%;
+  background: #ffffff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.comment-button {
+  margin-left: auto;
+  font-family: montserrat;
+}
+
+#comments {
+  display: none;
+}
+
+.comment {
+  width: 100%;
+  background: #f4f4f4;
+  border: 1px solid rgb(182, 182, 182);
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  font-family: montserrat;
+}
+
+.comment .message {
+  width: 80%;
+  font-size: 15px;
+  color: rgb(95, 94, 94);
+}
+
+.comment .sentiment {
+  font-size: 12px;
+}
